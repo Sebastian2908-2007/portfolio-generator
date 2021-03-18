@@ -17,12 +17,28 @@
       {
         type: 'input',
         name: 'name',
-        message: 'what is your name?'
+        message: 'what is your name?',
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          }else {
+            console.log('please enter your name!');
+            return false;
+          }
+        }
       },
       {
        type: 'input',
        name: 'github',
-       message: 'enter your gitHub Username'
+       message: 'enter your gitHub Username',
+       validate: githubUserNameInput => {
+         if (githubUserNameInput) {
+           return true;
+         }else {
+           console.log('you must enter a user name!');
+           return false;
+         }
+       }
       },
       {
         type: 'input',
@@ -47,12 +63,28 @@ Add a New Project
        {
         type: 'input',
         name: 'name',
-        message: 'What is the name of your project?'
+        message: 'What is the name of your project?',
+        validate: projectNameInput => {
+          if (projectNameInput) {
+            return true;
+          }else {
+            console.log('you must enter a project name!')
+            return false;
+          }
+        }
        },
        {
          type:'input',
          name:'description',
-         message:'Provide a description of the project(Required)'
+         message:'Provide a description of the project(Required)',
+         validate: projectDescriptInput => {
+           if (projectDescriptInput) {
+             return true;
+           }else {
+             console.log('you must enter a project description!');
+             return false;
+           }
+         }
        },
        {
          type: 'checkbox',
@@ -63,7 +95,15 @@ Add a New Project
        {
          type: 'input',
          name: 'link',
-         message: 'Enter the Github link to your project. (Required)'
+         message: 'Enter the Github link to your project. (Required)',
+         validate: linkInput => {
+           if (linkInput) {
+             return true;
+           }else {
+             console.log('you must enter a project link!');
+             return false;
+           }
+         }
        },
        {
          type: 'confirm',
